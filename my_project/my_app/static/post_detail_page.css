@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height:100vh !important;
+    overflow-y: scroll;
+   
+}
+.nav {
+    justify-content: flex-end;
+    width: 100%;
+    background-color: rgb(50, 48, 54);
+}
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+.nav-link {
+    font-size: 1.2rem;
+}
+.container {
+    background-color: rgb(166 147 147 / 12%);
+    padding: 20px;
+}
+.back{ 
+    display: flex;
+    justify-content: flex-end;
+
+}
