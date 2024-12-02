@@ -6,8 +6,7 @@ body {
     display: flex;
     width: 100vw;
     height: 100vh;
-    /* background-color: #f8f9fa; */
-}
+    /* background-color: #f8f9fa; */}
 .left {
     flex: 1;
     padding: 40px;
