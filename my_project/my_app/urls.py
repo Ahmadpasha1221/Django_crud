@@ -1,4 +1,6 @@
 from django.urls import path
+from django.conf.urls import handler404,handler500
+from .views import custom_404_view,custom_500_view
 from . import views
 
 urlpatterns = [
@@ -11,3 +13,8 @@ urlpatterns = [
     path('post/<int:id>/delete',views.delete_post,name="delete_post"),
     path('logout',views.logout_view,name="logout_view")
 ]
+
+
+handler404 = custom_404_view
+
+handler500 = custom_500_view
