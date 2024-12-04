@@ -24,6 +24,15 @@
             </div>
         </nav>
     </div>
+    <div class="message-box">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-success fade-out" role="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
     <div class="container mt-3">
         <h1>Create a New Post</h1>
         <form method="POST">

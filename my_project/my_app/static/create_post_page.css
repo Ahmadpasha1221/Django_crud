@@ -31,3 +31,28 @@ body {
     display: flex;
     justify-content: flex-end;
 }
+.message-box {
+    position: fixed;
+    top: 70px;
+    right: 10px;
+    z-index: 1050;
+    min-width: 300px;
+}
+
+.fade-out {
+    animation: fadeOut 5s forwards; 
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        visibility: hidden;
+    }
+    50% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}

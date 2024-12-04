@@ -75,11 +75,11 @@ body {
         opacity: 1;
         visibility: hidden;
     }
-    /* 50% {
+    50% {
         opacity: 0.1;
     }
     100% {
         opacity: 0;
         visibility: hidden;
-    } */
+    }
 }

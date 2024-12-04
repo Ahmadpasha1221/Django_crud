@@ -9,7 +9,7 @@ from django.http import Http404
 
 
 # Create your views here.
-# @login_required
+
 def home_page(request):
     try:
         if not request.user.is_authenticated:
@@ -20,7 +20,7 @@ def home_page(request):
         messages.error(request,'You Must Login First')
         return redirect('login_view')
 
-# @login_required
+
 def post_detail(request,id):
     if not request.user.is_authenticated:
         messages.error(request,'You Must Login First')
@@ -32,7 +32,7 @@ def post_detail(request,id):
         messages.error(request,f'Error Occured:{str(e)}')
         return redirect('home_page')
 
-# @login_required
+
 def create_post(request):
     try:
         if not request.user.is_authenticated:
@@ -60,17 +60,17 @@ def create_post(request):
         return redirect("home_page")
 
 
-# @login_required
+
 def edit_post(request,id):
     try:
         if not request.user.is_authenticated:
             messages.error(request,'You Must Login To Edit Post')
             return redirect('login_view')
-        # try:
-        post = get_object_or_404(Post,id=id)
-        # except Post.DoesNotExist:
-        #     messages.error(request,'Post Does Not Exist')
-        #     return redirect('home_page')
+        try:
+           post = get_object_or_404(Post,id=id)
+        except Post.DoesNotExist:
+            messages.error(request,'Post Does Not Exist')
+            return redirect('home_page')
     
         if request.method == 'POST':
             title = request.POST.get('title')
@@ -97,7 +97,7 @@ def edit_post(request,id):
 
 
 
-# @login_required
+
 def delete_post(request, id):
     try:
         if not request.user.is_authenticated:
@@ -106,7 +106,6 @@ def delete_post(request, id):
         
         post = get_object_or_404(Post, id=id)
         
-    
         if request.method == "POST":
             try:
                 post.delete()
